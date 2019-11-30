@@ -1,0 +1,22 @@
+.my-list {
+  //   height: 800px;
+  //   overflow-y: scroll;
+  //   padding: 0 1rem;
+  //   overflow: -moz-scrollbars-none;
+  //   -ms-overflow-style: none;
+  //   /* Internet Explorer 10+ */
+  //   scrollbar-width: none;
+
+  //   /* Firefox */
+  //   &::-webkit-scrollbar {
+  //     width: 0px;
+  //     //   /* Remove scrollbar space */
+  //     background: transparent;
+  //     //   /* Optional: just make scrollbar invisible */
+  //   }
+
+
+  .my-list-item {
+    margin-bottom: 1rem;
+  }
+}

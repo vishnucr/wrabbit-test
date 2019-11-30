@@ -1,0 +1,33 @@
+<section class="hero is-primary is-fullheight is-bold ">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <!-- single column -->
+        <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+          <form novalidate [formGroup]="loginForm" (ngSubmit)="submit()" class="box">
+            <div class="field">
+              <label for="" class="label">Username</label>
+              <div class="control">
+                <input type="text" formControlName="username" placeholder="Enter your unsername" class="input">
+              </div>
+              <p class="help is-danger" *ngIf="f.username.touched && f.username.errors?.required">Required</p>
+            </div>
+            <div class="field">
+              <label for="" class="label">Password</label>
+              <div class="control">
+                <input type="password" formControlName="password" placeholder="*******" class="input">
+              </div>
+              <p class="help is-danger" *ngIf="f.password.touched && f.password.errors?.required">Required</p>
+            </div>
+            <div class="field">
+              <button class="button is-success is-" [disabled]='!loginForm.valid'>
+                Login
+              </button>
+            </div>
+            <p class="help is-danger" *ngIf="errorMessage">{{errorMessage}}</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

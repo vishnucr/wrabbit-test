@@ -1,0 +1,89 @@
+<section class="section">
+  <h3 class="is-size-5 heading">Add User</h3>
+  <form novalidate [formGroup]="userForm" (ngSubmit)="submit()" class="box">
+    <div class="field">
+      <label for="gender" class="label">Gender</label>
+      <div class="control">
+        <label class="radio">
+          <input type="radio" formControlName="gender" value="male" name="gender">
+          Male
+        </label>
+        <label class="radio">
+          <input type="radio" formControlName="gender" value="female" name="gender">
+          Female
+        </label>
+      </div>
+    </div>
+    <div formGroupName="name">
+      <div class="field">
+        <label for="" class="label">Title</label>
+        <div class="control">
+          <input type="text" formControlName="title" placeholder="Enter your title" class="input">
+        </div>
+        <p class="help is-danger" *ngIf="f.name.controls.title.touched && f.name.controls.title.errors?.required">
+          Required</p>
+      </div>
+
+      <div class="field">
+        <label for="" class="label">First Name</label>
+        <div class="control">
+          <input type="text" formControlName="first" placeholder="Enter your first name" class="input">
+        </div>
+        <p class="help is-danger" *ngIf="f.name.controls.first.touched && f.name.controls.first.errors?.required">
+          Required</p>
+      </div>
+
+      <div class="field">
+        <label for="" class="label">Last Name</label>
+        <div class="control">
+          <input type="text" formControlName="last" placeholder="Enter your last name" class="input">
+        </div>
+        <p class="help is-danger" *ngIf="f.name.controls.last.touched && f.name.controls.last.errors?.required">
+          Required</p>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="" class="label">Email</label>
+      <div class="control">
+        <input type="text" formControlName="email" placeholder="Enter your email" class="input">
+      </div>
+      <p class="help is-danger" *ngIf="f.email.touched && f.email.errors?.required">Required</p>
+      <p class="help is-danger" *ngIf="f.email.touched && f.email.errors?.pattern">Not valid email</p>
+    </div>
+    <div class="field">
+      <label for="" class="label">Userame</label>
+      <div class="control">
+        <input type="text" formControlName="username" placeholder="Enter your unsername" class="input">
+      </div>
+      <!-- <p class="help is-danger" *ngIf="f.username.touched && f.username.errors?.required">Required</p> -->
+    </div>
+    <div class="field">
+      <label for="" class="label">Password</label>
+      <div class="control">
+        <input type="password" formControlName="password" placeholder="*******" class="input">
+      </div>
+      <!-- <p class="help is-danger" *ngIf="f.password.touched && f.password.errors?.required">Required</p> -->
+    </div>
+    <div class="field">
+      <label for="" class="label">DOB</label>
+      <div class="control">
+        <input type="text" formControlName="dob" placeholder="Enter your DOB" class="input">
+      </div>
+      <!-- <p class="help is-danger" *ngIf="f.username.touched && f.username.errors?.required">Required</p> -->
+    </div>
+    <div class="field">
+      <label for="" class="label">Phone</label>
+      <div class="control">
+        <input type="text" formControlName="phone" placeholder="Enter your phone" class="input">
+      </div>
+      <!-- <p class="help is-danger" *ngIf="f.username.touched && f.username.errors?.required">Required</p> -->
+    </div>
+    <div class="field">
+      <button class="button is-success is-" [disabled]='!userForm.valid'>
+        Login
+      </button>
+    </div>
+    <p class="help is-danger" *ngIf="errorMessage">{{errorMessage}}</p>
+  </form>
+</section>

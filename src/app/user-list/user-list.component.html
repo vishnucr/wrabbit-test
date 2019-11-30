@@ -1,0 +1,39 @@
+<section class="section">
+  <h3 class="is-size-5 heading">User List</h3>
+  <form [formGroup]="searchFrom" (ngSubmit)="search()">
+    <div class="field has-addons m-b-1">
+      <div class="control">
+        <input class="input" formControlName="key" type="text" placeholder="Search">
+      </div>
+      <div class="control">
+        <button class="button is-primary">
+          Search
+        </button>
+      </div>
+      <div class="control">
+        <a class="button is-outlined is-primary" (click)="clear()">
+          Clear
+        </a>
+      </div>
+    </div>
+  </form>
+  <div>
+    <ul class="my-list">
+      <li class="my-list-item" *ngFor="let user of users">
+        <div class="box">
+          <article class="media">
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  {{ user.name.title | uppercase }}.{{ user.name.first | uppercase}}
+                  {{ user.name.last | uppercase}}<br>
+                  <small>{{ user.email }}</small>
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
